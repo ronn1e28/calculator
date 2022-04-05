@@ -18,7 +18,8 @@ function App() {
   
   const calculate = () => {
     try {
-      setResult(eval(result.toString()));
+      let temp = eval(result);
+      setResult(temp.toString());
     } catch (e) {
       setResult("Error");
     }
@@ -75,10 +76,12 @@ function App() {
           <input type='text' value={result}/>
         </form>
         <div className='keypad'>
-          <button className='highlight' onClick={clear}>Clr</button>
-          <button className='highlight' onClick={backspace}>C</button>
+          
           <button className='highlight' name='(' onClick={handleClick}>(</button>
           <button className='highlight' name=')' onClick={handleClick}>)</button>
+          <button className='highlight' onClick={backspace}>C</button>
+ 
+          <button className='highlight' onClick={clear}>Clr</button>
           <button className='highlight' name='/' onClick={handleClick}>&divide;</button>
 
           <button name='7' onClick={handleClick}>7</button>
